@@ -35,7 +35,7 @@ public class StructureCharacteristics implements Serializable {
 	private Integer structureCharacteristicsId;
 
 	@Column(name = "RISK_ID")
-	private String riskId;
+	private Integer riskId;
 
 	@Column(name = "USER_NAME")
 	private String userName;
@@ -90,7 +90,7 @@ public class StructureCharacteristics implements Serializable {
 
 	@Column(name = "NO_OF_DANG_EVENT_ON_STRUCTURE")
 	private String noOfDangerousEventOnStructure;
-	
+
 	@Column(name = "NO_OF_DANG_EVENT_NEAR_STRUCTURE")
 	private String noOfDangerousEventNearStructure;
 
@@ -154,10 +154,22 @@ public class StructureCharacteristics implements Serializable {
 	@JsonManagedReference
 	@OneToMany(mappedBy = "structureCharacteristics", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<StructureAttributes> structureAttributes;
-	
+
 	@JsonManagedReference
 	@OneToMany(mappedBy = "structureCharacteristics", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Losses> losses;
+
+	@JsonManagedReference
+	@OneToMany(mappedBy = "structureCharacteristics", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<Protection> protection;
+
+	@JsonManagedReference
+	@OneToMany(mappedBy = "structureCharacteristics", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<RiskProtection> riskProtection;
+
+	@JsonManagedReference
+	@OneToMany(mappedBy = "structureCharacteristics", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<CalculatedRisk> calculatedRisk;
 
 	public Integer getStructureCharacteristicsId() {
 		return structureCharacteristicsId;
@@ -167,11 +179,11 @@ public class StructureCharacteristics implements Serializable {
 		this.structureCharacteristicsId = structureCharacteristicsId;
 	}
 
-	public String getRiskId() {
+	public Integer getRiskId() {
 		return riskId;
 	}
 
-	public void setRiskId(String riskId) {
+	public void setRiskId(Integer riskId) {
 		this.riskId = riskId;
 	}
 
@@ -439,14 +451,6 @@ public class StructureCharacteristics implements Serializable {
 		this.yearPeoplePresentBuilding = yearPeoplePresentBuilding;
 	}
 
-	public String getCreatedDate() {
-		return createdDate;
-	}
-
-	public void setCreatedDate(String createdDate) {
-		this.createdDate = createdDate;
-	}
-
 	public String getCreatedBy() {
 		return createdBy;
 	}
@@ -465,6 +469,14 @@ public class StructureCharacteristics implements Serializable {
 
 	public LocalDateTime getUpdatedDate() {
 		return updatedDate;
+	}
+
+	public String getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(String createdDate) {
+		this.createdDate = createdDate;
 	}
 
 	public void setUpdatedDate(LocalDateTime updatedDate) {
@@ -498,7 +510,29 @@ public class StructureCharacteristics implements Serializable {
 	public void setNoOfDangerousEventNearStructure(String noOfDangerousEventNearStructure) {
 		this.noOfDangerousEventNearStructure = noOfDangerousEventNearStructure;
 	}
-	
-	
-	
+
+	public List<Protection> getProtection() {
+		return protection;
+	}
+
+	public void setProtection(List<Protection> protection) {
+		this.protection = protection;
+	}
+
+	public List<RiskProtection> getRiskProtection() {
+		return riskProtection;
+	}
+
+	public void setRiskProtection(List<RiskProtection> riskProtection) {
+		this.riskProtection = riskProtection;
+	}
+
+	public List<CalculatedRisk> getCalculatedRisk() {
+		return calculatedRisk;
+	}
+
+	public void setCalculatedRisk(List<CalculatedRisk> calculatedRisk) {
+		this.calculatedRisk = calculatedRisk;
+	}
+
 }
