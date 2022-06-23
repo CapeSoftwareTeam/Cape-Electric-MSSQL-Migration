@@ -66,7 +66,9 @@ public class DataExportServiceImpl implements DataExportService {
 			customerDetails.setUserName("sivaraju@capeindia.net");
 
 			customerDetails.setEmail("sivaraju@capeindia.net");
-
+			customerDetails.setStatus("Active");
+			
+		
 			customerDetails.setOrganisationName(riskAssessmentDetails.getCustomerName());
 
 			customerDetails
@@ -216,11 +218,13 @@ public class DataExportServiceImpl implements DataExportService {
 
 			structor.setYearPeoplePresentBuilding(
 					riskAssessmentDetails.getNumberOfHoursYearPeopleArePresentInTheBuilding());
-
+			structor.setUserName("sivaraju@capeindia.net");
 			structor.setCreatedBy("");
 
 			structor.setUpdatedBy("MigrationData");
 			structor.setUpdatedDate(LocalDateTime.now());
+			System.out.println(riskAssessmentDetails.getProjectName()+"111111111111111111111111111111111111111111");
+			structor.setProjectName(riskAssessmentDetails.getProjectName());
 			structor.setCreatedDate(riskAssessmentDetails.getTouchTime().toString());
 
 			List<StructureAttributes> structureAttributes1 = new ArrayList<StructureAttributes>();
@@ -620,6 +624,10 @@ public class DataExportServiceImpl implements DataExportService {
 			calculatedRisk.setRiskProtectionRI3(null);
 			calculatedRisk.setRiskProtectionRI4(null);
 
+			calculatedRisk.setRiskProtectionRD1(null);
+			calculatedRisk.setRiskProtectionRI1(null);
+			calculatedRisk.setRiskProtectionR1(null);
+
 			calculatedRisk.setStructureCharacteristics(structor);
 
 			cal.add(calculatedRisk);
@@ -659,12 +667,6 @@ public class DataExportServiceImpl implements DataExportService {
 
 			protection.setRiskProtectionRZ1(null);
 
-			protection.setRiskProtectionRD1(null);
-
-			protection.setRiskProtectionRI1(null);
-
-			protection.setRiskProtectionR1(null);
-
 			protection.setRiskProtectionRB1(null);
 
 			protection.setCulturalRB(null);
@@ -686,22 +688,15 @@ public class DataExportServiceImpl implements DataExportService {
 			riskProtection.setRiskProtectionRW2(null);
 
 			riskProtection.setRiskProtectionRZ2(null);
-			riskProtection.setRiskProtectionRB3(null);
 
-			riskProtection.setRiskProtectionRV3(null);
-
-			riskProtection.setRiskProtectionRA4(null);
-			riskProtection.setRiskProtectionRB4(null);
-
-			riskProtection.setRiskProtectionRC4(null);
-
-			riskProtection.setRiskProtectionRM4(null);
-
-			riskProtection.setRiskProtectionRU4(null);
-			riskProtection.setRiskProtectionRV4(null);
-			riskProtection.setRiskProtectionRW4(null);
-
-			riskProtection.setRiskProtectionRZ4(null);
+			riskProtection.setEconamicValueRA(null);
+			riskProtection.setEconamicValueRB(null);
+			riskProtection.setEconamicValueRC(null);
+			riskProtection.setEconamicValueRM(null);
+			riskProtection.setEconamicValueRU(null);
+			riskProtection.setEconamicValueRV(null);
+			riskProtection.setEconamicValueRW(null);
+			riskProtection.setEconamicValueRZ(null);
 
 			riskProtection.setEconamicValueRA(null);
 
