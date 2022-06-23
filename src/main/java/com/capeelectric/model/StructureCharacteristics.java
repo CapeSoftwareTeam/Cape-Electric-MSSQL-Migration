@@ -39,6 +39,9 @@ public class StructureCharacteristics implements Serializable {
 
 	@Column(name = "USER_NAME")
 	private String userName;
+	
+	@Column(name = "PROJECT_NAME")
+	private String projectName;
 
 	@Column(name = "LOCATION")
 	private String location;
@@ -451,6 +454,14 @@ public class StructureCharacteristics implements Serializable {
 		this.yearPeoplePresentBuilding = yearPeoplePresentBuilding;
 	}
 
+	public String getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(String createdDate) {
+		this.createdDate = createdDate;
+	}
+
 	public String getCreatedBy() {
 		return createdBy;
 	}
@@ -469,14 +480,6 @@ public class StructureCharacteristics implements Serializable {
 
 	public LocalDateTime getUpdatedDate() {
 		return updatedDate;
-	}
-
-	public String getCreatedDate() {
-		return createdDate;
-	}
-
-	public void setCreatedDate(String createdDate) {
-		this.createdDate = createdDate;
 	}
 
 	public void setUpdatedDate(LocalDateTime updatedDate) {
@@ -534,5 +537,15 @@ public class StructureCharacteristics implements Serializable {
 	public void setCalculatedRisk(List<CalculatedRisk> calculatedRisk) {
 		this.calculatedRisk = calculatedRisk;
 	}
+
+	public String getProjectName() {
+		return projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+	}
+	
+	
 
 }
