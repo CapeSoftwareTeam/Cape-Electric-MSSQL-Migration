@@ -63,18 +63,18 @@ public class DataExportServiceImpl implements DataExportService {
 
 			CustomerDetails customerDetails = new CustomerDetails();
 
-			customerDetails.setUserName("sivaraju@capeindia.net");
+			customerDetails.setUserName("sd@capeindia.net");
 
-			customerDetails.setEmail("sivaraju@capeindia.net");
+			customerDetails.setEmail("sd@capeindia.net");
 			customerDetails.setStatus("Active");
 			
 		
 			customerDetails.setOrganisationName(riskAssessmentDetails.getCustomerName());
 
 			customerDetails
-					.setAddress(riskAssessmentDetails.getDesignation() + riskAssessmentDetails.getContactPerson());
+					.setAddress(riskAssessmentDetails.getContactPerson());
 
-			customerDetails.setProjectName(riskAssessmentDetails.getProjectName());
+			customerDetails.setProjectName(riskAssessmentDetails.getDesignation());
 
 			customerDetails.setProjectDescription(riskAssessmentDetails.getMobileNo());
 			customerDetails.setContactPersonName(riskAssessmentDetails.getTelephoneNo());
@@ -89,16 +89,16 @@ public class DataExportServiceImpl implements DataExportService {
 
 			}
 
-			customerDetails.setPreparedBy("sd@capeindia.net");
+			customerDetails.setPreparedBy(riskAssessmentDetails.getProjectName());
 
-			customerDetails.setVerifiedBy("sd@capeindia.net");
+			customerDetails.setVerifiedBy(riskAssessmentDetails.getEngineersName());
 
-			customerDetails.setCreatedBy("sd@capeindia.net");
+			customerDetails.setCreatedBy("Migrated Data");
 
 			customerDetails.setCreatedDate(LocalDateTime.now());
 
 			customerDetails.setUpdatedDate(LocalDateTime.now());
-			customerDetails.setUpdatedBy("sd@capeindia.net");
+			customerDetails.setUpdatedBy("Migrated Data");
 
 			customerDetailsRepository.save(customerDetails);
 
@@ -218,12 +218,11 @@ public class DataExportServiceImpl implements DataExportService {
 
 			structor.setYearPeoplePresentBuilding(
 					riskAssessmentDetails.getNumberOfHoursYearPeopleArePresentInTheBuilding());
-			structor.setUserName("sivaraju@capeindia.net");
-			structor.setCreatedBy("");
+			structor.setUserName("sd@capeindia.net");
+			structor.setCreatedBy("Migrated Data");
 
 			structor.setUpdatedBy("MigrationData");
 			structor.setUpdatedDate(LocalDateTime.now());
-			System.out.println(riskAssessmentDetails.getProjectName()+"111111111111111111111111111111111111111111");
 			structor.setProjectName(riskAssessmentDetails.getProjectName());
 			structor.setCreatedDate(riskAssessmentDetails.getTouchTime().toString());
 
