@@ -450,7 +450,7 @@ public class DataExportServiceImpl implements DataExportService {
 			}
 
 			else if (riskAssessmentDetails.getHazardClassification()
-					.contains("Multistoried buildings / hotels / industrial / commercial")) {
+					.contains("multistoried buildings / hotels / industrial / commercial")) {
 				losses.setHazardClassification("5");
 
 			} else if (riskAssessmentDetails.getHazardClassification().contains("Risk of explosion")) {
@@ -544,7 +544,7 @@ public class DataExportServiceImpl implements DataExportService {
 					.contains("Hospitals, industrial, hotel, office, commercial")) {
 				losses.setEcoLossOfFailureOfInternalSystem("0.01");
 			} else if (riskAssessmentDetails.getLossDueToFailureOfInternalSystemsL4()
-					.contains("Museum, agricultural, school, office,public entertainment, church")) {
+					.contains("Museum, agricultural, school, office, public entertainment, church")) {
 				losses.setEcoLossOfFailureOfInternalSystem("0.001");
 
 			} else if (riskAssessmentDetails.getLossDueToFailureOfInternalSystemsL4().contains("Others")) {
