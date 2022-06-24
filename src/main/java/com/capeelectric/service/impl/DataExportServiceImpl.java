@@ -221,7 +221,7 @@ public class DataExportServiceImpl implements DataExportService {
 			structor.setUserName("sd@capeindia.net");
 			structor.setCreatedBy("Migrated Data");
 
-			structor.setUpdatedBy("MigrationData");
+			structor.setUpdatedBy("Migration Data");
 			structor.setUpdatedDate(LocalDateTime.now());
 			structor.setProjectName(riskAssessmentDetails.getProjectName());
 			structor.setCreatedDate(riskAssessmentDetails.getTouchTime().toString());
